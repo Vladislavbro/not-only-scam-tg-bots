@@ -8,7 +8,10 @@ bot = telebot.TeleBot(TOKEN)
 # Обработчик всех входящих сообщений
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
-    bot.reply_to(message, "Сосал?")
+    if message.text.lower() == "да":
+        bot.reply_to(message, "Так и знал")
+    else:
+        bot.reply_to(message, "Сосал?")
 
 # Сообщение о запуске бота
 print("Бот успешно запущен! Нажмите Ctrl+C для остановки.")
