@@ -74,9 +74,9 @@ pip install -r requirements.txt
 
 4. Запустить нужного бота:
 ```bash
-python Contact-bot.py  # Для бота сбора контактов
+python contact_bot.py  # Для бота сбора контактов
 # или
-python Scam-bot.py     # Для скам-бота
+python scam_bot.py     # Для скам-бота
 ```
 
 ### Установка на сервере
@@ -105,7 +105,7 @@ apt install screen -y
 screen -S botname  # где botname - имя бота (contactbot или scambot)
 
 # Запустить бота
-python Contact-bot.py  # или Scam-bot.py
+python contact_bot.py  # или scam_bot.py
 
 # Отсоединиться от сессии (Ctrl+A, затем D)
 ```
@@ -113,7 +113,7 @@ python Contact-bot.py  # или Scam-bot.py
 ## Зависимости
 
 - Python 3.7+
-- aiogram 3.x (для Contact-bot)
-- pyTelegramBotAPI (для Scam-bot)
+- aiogram 3.x (для contact_bot)
+- pyTelegramBotAPI (для scam_bot)
 - SQLite3 (встроен в Python)
 - python-dotenv (для загрузки переменных окружения)
