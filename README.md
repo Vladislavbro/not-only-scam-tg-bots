@@ -39,6 +39,20 @@ CREATE TABLE contacts (
 
 ## Установка и запуск
 
+### Настройка переменных окружения
+
+1. Создайте файл `.env` в корне проекта на основе `.env.example`:
+```bash
+cp .env.example .env
+```
+
+2. Откройте файл `.env` и добавьте ваш токен Telegram бота:
+```
+API_TOKEN=your_telegram_bot_token_here
+```
+
+Получить токен можно у [@BotFather](https://t.me/BotFather) в Telegram.
+
 ### Локальная разработка
 
 1. Клонировать репозиторий:
@@ -56,7 +70,9 @@ venv\Scripts\activate  # Для Windows
 pip install -r requirements.txt
 ```
 
-3. Запустить нужного бота:
+3. Настроить переменные окружения (см. раздел выше)
+
+4. Запустить нужного бота:
 ```bash
 python Contact-bot.py  # Для бота сбора контактов
 # или
@@ -78,7 +94,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. Запустить бота в фоновом режиме:
+3. Настроить переменные окружения (см. раздел выше)
+
+4. Запустить бота в фоновом режиме:
 ```bash
 # Установить screen, если его нет
 apt install screen -y
@@ -98,3 +116,4 @@ python Contact-bot.py  # или Scam-bot.py
 - aiogram 3.x (для Contact-bot)
 - pyTelegramBotAPI (для Scam-bot)
 - SQLite3 (встроен в Python)
+- python-dotenv (для загрузки переменных окружения)

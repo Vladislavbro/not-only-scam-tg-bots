@@ -1,12 +1,17 @@
 import asyncio
 import sqlite3
+import os
+from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher, types
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove
 
-# Токен от BotFather
-API_TOKEN = '7779014860:AAEtePZABseH8HtkNr9DUikUzLaBry-K-4k'
+# Загружаем переменные окружения из .env файла
+load_dotenv()
+
+# Получаем токен из переменных окружения
+API_TOKEN = os.getenv("API_TOKEN")
 
 # Инициализация базы данных
 def init_db():

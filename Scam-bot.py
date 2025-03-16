@@ -1,8 +1,13 @@
 import telebot
 import time
+import os
+from dotenv import load_dotenv
 
-# Не забудьте заменить токен на свой, храните его в секрете!
-TOKEN = '7779014860:AAEtePZABseH8HtkNr9DUikUzLaBry-K-4k'
+# Загружаем переменные окружения из .env файла
+load_dotenv()
+
+# Получаем токен из переменных окружения
+TOKEN = os.getenv("API_TOKEN")
 bot = telebot.TeleBot(TOKEN)
 
 # Обработчик всех входящих сообщений
