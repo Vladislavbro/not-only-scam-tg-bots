@@ -1,0 +1,45 @@
+# Виртуальное окружение
+venv/
+env/
+ENV/
+
+# База данных SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Логи
+*.log
+
+# Локальные настройки
+.env
+.env.local
+.env.*.local
+
+# Файлы IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Файлы macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Файлы Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Временные файлы
+*.tmp
+*.bak
+*.swp
+*~.nib 
