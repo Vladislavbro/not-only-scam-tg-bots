@@ -39,10 +39,19 @@ def init_db():
         first_name TEXT,
         username TEXT,
         phone_number TEXT,
-        event_id TEXT NOT NULL,
+        event_id TEXT NOT NULL DEFAULT 'default',
         date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
     ''')
+    
+    # Проверяем, существует ли колонка event_id
+    cursor.execute("PRAGMA table_info(contacts)")
+    columns = [column[1] for column in cursor.fetchall()]
+    
+    # Если колонки event_id нет, добавляем её
+    if 'event_id' not in columns:
+        print("Добавление колонки event_id в существующую таблицу...")
+        cursor.execute("ALTER TABLE contacts ADD COLUMN event_id TEXT NOT NULL DEFAULT 'default'")
     
     conn.commit()
     conn.close()
